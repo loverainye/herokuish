@@ -1,2 +1,2 @@
 django>=1.11.19
-gunicorn==18.0
+gunicorn>=19.5.0
