@@ -2,7 +2,9 @@ FROM heroku/heroku:18-build
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update -qq \
+RUN  sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list \
+ && apt-get clean \
+ && apt-get update -qq \
  && apt-get install -qq -y daemontools \
  && apt-get -qq -y \
     --allow-downgrades \
